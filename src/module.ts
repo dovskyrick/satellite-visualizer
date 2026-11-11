@@ -114,6 +114,20 @@ export const plugin = new PanelPlugin<SimpleOptions>(SatelliteVisualizer).setPan
       showIf: (config) => config.trajectoryShow,
     })
 
+    .addBooleanSwitch({
+      path: 'showBodyAxes',
+      name: 'Show body axes',
+      description: 'Show the satellite body frame axes (X, Y, Z), oriented by the orientation data.',
+      defaultValue: false,
+    })
+    .addNumberInput({
+      path: 'bodyAxesLength',
+      name: 'Body axes length',
+      description: 'The length (in pixels) of the body axes.',
+      defaultValue: 100,
+      showIf: (config) => config.showBodyAxes,
+    })
+
     .addCustomEditor({
       id: 'locations',
       path: 'locations',

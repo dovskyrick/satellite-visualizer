@@ -22,6 +22,7 @@ import {
   Matrix3,
 } from 'cesium';
 import { TEST_IDS } from '../constants';
+import { BodyAxes } from './BodyAxes';
 
 declare const CESIUM_BASE_URL: string;
 
@@ -293,6 +294,14 @@ export const SatelliteVisualizer: React.FC<Props> = ({
               />
             )}
           </Entity>
+        )}
+        {options.showBodyAxes && satelliteAvailability && satellitePosition && satelliteOrientation && (
+          <BodyAxes
+            position={satellitePosition}
+            orientation={satelliteOrientation}
+            availability={satelliteAvailability}
+            length={options.bodyAxesLength}
+          />
         )}
         {options.locations.map((location, index) => (
           <Entity

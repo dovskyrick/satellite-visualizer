@@ -22,6 +22,9 @@ export interface SimpleOptions {
   trajectoryColor: string;
   trajectoryDashLength: number;
 
+  showBodyAxes: boolean;
+  bodyAxesLength: number;
+
   locations: Location[];
   locationPointSize: number;
   locationPointColor: string;
